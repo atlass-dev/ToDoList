@@ -35,4 +35,14 @@ public class Assignment
 	/// The date when assignment has been completed.
 	/// </summary>
 	public DateTime? CompletedAt { get; set; }
+
+	/// <summary>
+	/// Id of user who created this assignment.
+	/// </summary>
+	public int UserId { get; set; }
+
+	/// <summary>
+	/// User who created this assignment.
+	/// </summary>
+	public User User { get; set; }
 }
