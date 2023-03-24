@@ -1,7 +1,21 @@
+using Microsoft.EntityFrameworkCore;
+using ToDoList.Infrastructure.DataAccess;
+using ToDoList.Web.Infrastructure.DependencyInjection;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+var connectionString = builder.Configuration.GetConnectionString("Default")
+    ?? throw new ArgumentNullException("ConnectionStrings:Default", "Database connection string is not initialized");
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+});
+
+SystemModule.Register(builder.Services);
 
 var app = builder.Build();
 

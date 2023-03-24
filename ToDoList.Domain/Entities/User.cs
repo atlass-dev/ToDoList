@@ -1,17 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 
 namespace ToDoList.Domain.Entities;
 
 /// <summary>
 /// User entity.
 /// </summary>
-public class User
+public class User : IdentityUser<int>
 {
-	/// <summary>
-	/// User's id.
-	/// </summary>
-	public int Id { get; set; }
-
 	/// <summary>
 	/// User's first name.
 	/// </summary>
@@ -32,13 +28,6 @@ public class User
 	[MinLength(8)]
 	[Required]
 	required public string Password { get; set; }
-
-	/// <summary>
-	/// User's email.
-	/// </summary>
-	[MaxLength(255)]
-	[Required]
-	required public string Email { get; set; }
 
 	/// <summary>
 	/// User's full name.
