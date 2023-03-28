@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ToDoList.Infrastructure.DataAccess\ToDoList.Infrastructure.DataAccess.csproj" />
+    <ProjectReference Include="..\ToDoList.UseCases\ToDoList.UseCases.csproj" />
   </ItemGroup>
 
 </Project>

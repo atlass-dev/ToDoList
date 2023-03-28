@@ -16,6 +16,7 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 });
 
 SystemModule.Register(builder.Services);
+AutoMapperModule.Register(builder.Services);
 
 var app = builder.Build();
 
