@@ -2,6 +2,9 @@
 
 namespace ToDoList.Web.Infrastructure.DependencyInjection;
 
+/// <summary>
+/// AutoMapper dependencies.
+/// </summary>
 public static class AutoMapperModule
 {
     /// <summary>
