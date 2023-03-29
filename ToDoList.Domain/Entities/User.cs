@@ -23,13 +23,6 @@ public class User : IdentityUser<int>
 	required public string LastName { get; set; }
 
 	/// <summary>
-	/// User's password.
-	/// </summary>
-	[MinLength(8)]
-	[Required]
-	required public string Password { get; set; }
-
-	/// <summary>
 	/// User's full name.
 	/// </summary>
 	public string FullName => $"{FirstName} {LastName}";
