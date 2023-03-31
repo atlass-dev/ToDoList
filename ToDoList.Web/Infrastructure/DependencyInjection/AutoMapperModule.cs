@@ -14,6 +14,7 @@ public static class AutoMapperModule
     public static void Register(IServiceCollection services)
     {
         services.AddAutoMapper(
-            typeof(UserMappingProfile).Assembly);
+            typeof(UserMappingProfile).Assembly,
+            typeof(WebMappingProfile).Assembly);
     }
 }

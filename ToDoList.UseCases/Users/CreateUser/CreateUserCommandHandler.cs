@@ -25,13 +25,15 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
 	/// <inheritdoc/>
 	public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
 	{
-		var existingProject = await dbContext.Users.FirstOrDefaultAsync(u => u.Email == request.Email);
+		var existingProject = await dbContext.Users.FirstOrDefaultAsync(u => u.Email == request.Email, cancellationToken);
 
 		if (existingProject == null)
 		{
 			var user = CreateUserFromRequest(request);
 
-			await dbContext.Users.AddAsync(user);
+			await dbContext.Users.AddAsync(user, cancellationToken);
+
+			await dbContext.SaveChangesAsync(cancellationToken);
 
 			return user.Id;
 		}
