@@ -25,30 +25,24 @@ public class CreateUserCommandHandler : IRequestHandler<CreateUserCommand, int>
 	/// <inheritdoc/>
 	public async Task<int> Handle(CreateUserCommand request, CancellationToken cancellationToken)
 	{
-		var user = CreateUserFromRequest(request);
+		var user = new User()
+		{
+			UserName = request.Email,
+			FirstName = request.Firstname,
+			LastName = request.Lastname,
+			Email = request.Email,
+			Birthdate = request.BirthDate
+		};
 
-		var result = await signInManager.UserManager.CreateAsync(user);
+		var result = await signInManager.UserManager.CreateAsync(user, request.Password);
 
 		if (result.Succeeded)
 		{
-			await signInManager.SignInAsync(user, false);
+			await signInManager.PasswordSignInAsync(user.Email, request.Password, isPersistent: true, lockoutOnFailure: false);
+
+			return user.Id;
 		}
 
-		throw new ArgumentException("Email is already used.");
+		throw new ArgumentException("User with this email already exists.");
 	}
-
-	private User CreateUserFromRequest(CreateUserCommand request)
-	{
-		var hasher = new PasswordHasher<IdentityUser>();
-		IdentityUser identityUser = new IdentityUser();
-
-		return new User()
-		{
-		    FirstName = request.Firstname,
-			LastName = request.Lastname,
-			PasswordHash = hasher.HashPassword(identityUser, request.Password),
-			Email = request.Email,
-			Birthdate = request.BirthDate,
-		};
-	} 
 }
