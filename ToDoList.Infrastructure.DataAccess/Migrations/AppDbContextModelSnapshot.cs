@@ -185,7 +185,7 @@ namespace ToDoList.Infrastructure.DataAccess.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Assignments");
+                    b.ToTable("Assignments", (string)null);
                 });
 
             modelBuilder.Entity("ToDoList.Domain.Entities.User", b =>
