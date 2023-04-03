@@ -142,3 +142,4 @@ sonar-project.properties
 *.nuspec
 *.dbmdl
 *.jfm
+/ToDoList.Web/appsettings.Development.json

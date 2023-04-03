@@ -1,48 +1,44 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using ToDoList.Web.Models.User;
 
-namespace ToDoList.Domain.Entities;
+namespace ToDoList.Web.Models.Assignment;
 
 /// <summary>
-/// Assignment entity.
+/// View model of Assignment.
 /// </summary>
-public class Assignment
+public record AssignmentViewModel
 {
 	/// <summary>
 	/// Assignment's id.
 	/// </summary>
-	[Key]
-	public int Id { get; set; }
+	public int Id { get; init; }
 
 	/// <summary>
 	/// Assignment's title.
 	/// </summary>
-	[MaxLength(50)]
-	[Required]
-	required public string Title { get; set; }
+	required public string Title { get; init; }
 
 	/// <summary>
 	/// Assignment's description.
 	/// </summary>
-	[MaxLength(500)]
-	public string? Description { get; set; }
+	public string? Description { get; init; }
 
 	/// <summary>
 	/// The date until assignment must be completed.
 	/// </summary>
-	public DateTime? CompleteUntil { get; set; }
+	public DateTime? CompleteUntil { get; init; }
 
 	/// <summary>
 	/// The date when assignment has been completed.
 	/// </summary>
-	public DateTime? CompletedAt { get; set; }
+	public DateTime? CompletedAt { get; init; }
 
 	/// <summary>
 	/// Id of user who created this assignment.
 	/// </summary>
-	public int UserId { get; set; }
+	public int UserId { get; init; }
 
 	/// <summary>
 	/// User who created this assignment.
 	/// </summary>
-	required public User User { get; set; }
+	required public UserViewModel User { get; init; }
 }

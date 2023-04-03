@@ -1,0 +1,14 @@
+﻿@model UserViewModel
+
+<div>
+	<h1>@Model.Fullname</h1>
+</div>
+
+<div>
+	@foreach(var assignment in Model.Assignments)
+	{
+		<div>
+			@assignment.Title
+		</div>
+	}
+</div>

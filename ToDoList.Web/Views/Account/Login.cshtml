@@ -1,0 +1,32 @@
+﻿@using Microsoft.AspNetCore.Identity;
+@using ToDoList.Domain.Entities;
+@inject SignInManager<User> SignInManager;
+@model UserLoginViewModel
+
+@if (SignInManager.IsSignedIn(User))
+{
+	<h1>You're logged in!</h1>
+}
+
+@using (Html.BeginForm("Login", "Users", FormMethod.Post))
+{
+	<div class="form-group">
+		<div class="row">
+			@Html.LabelFor(m => m.Email)
+			<div class="col">
+				@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" }})
+				@Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="row">
+			@Html.LabelFor(m => m.Password)
+			<div class="col">
+				@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", autocomplete = "off" }})
+				@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+			</div>
+		</div>
+		<div class="row">
+			<button type="submit" class="btn btn-primary my-3">Log In</button>
+		</div>
+	</div>
+}

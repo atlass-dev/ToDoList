@@ -1,0 +1,32 @@
+﻿@model UserRegisterViewModel
+
+<form asp-controller="Users" asp-action="Register">
+	<div>
+	    <label asp-for="@Model.Firstname"></label>
+	    <input asp-for="@Model.Firstname" />
+	</div>
+
+	<div>
+		<label asp-for="@Model.Lastname"></label>
+		<input asp-for="@Model.Lastname" />
+	</div>
+
+	<div>
+		<label asp-for="@Model.Password"></label>
+		<input type="password" asp-for="@Model.Password" />
+	</div>
+
+	<div>
+		<label asp-for="@Model.Email"></label>
+		<input type="email" asp-for="@Model.Email" />
+	</div>
+
+	<div>
+		<label asp-for="@Model.Birthdate"></label>
+		<input type="date" asp-for="@Model.Birthdate" />
+	</div>
+
+	<div>
+		<input type="submit" value="Register"/>
+	</div>
+</form>
