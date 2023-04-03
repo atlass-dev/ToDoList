@@ -1,4 +1,12 @@
-﻿@model UserLoginViewModel
+﻿@using Microsoft.AspNetCore.Identity;
+@using ToDoList.Domain.Entities;
+@inject SignInManager<User> SignInManager;
+@model UserLoginViewModel
+
+@if (SignInManager.IsSignedIn(User))
+{
+	<h1>You are logged in!</h1>
+}
 
 @using (Html.BeginForm("Login", "Users", FormMethod.Post))
 {
