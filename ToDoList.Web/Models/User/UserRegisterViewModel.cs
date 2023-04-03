@@ -20,12 +20,14 @@ public record UserRegisterViewModel
 	/// </summary>
 	[Required]
 	[MinLength(8)]
+	[DataType(DataType.Password)]
 	required public string Password { get; init; }
 
 	/// <summary>
 	/// User's email.
 	/// </summary>
 	[Required]
+	[DataType(DataType.EmailAddress)]
 	required public string Email { get; init; }
 
 	/// <inheritdoc cref="User.Birthdate"/>
