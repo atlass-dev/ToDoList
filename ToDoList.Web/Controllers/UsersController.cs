@@ -52,6 +52,21 @@ public class UsersController : Controller
 	}
 
 	/// <summary>
+	/// Gets user login page.
+	/// </summary>
+	[HttpGet("login")]
+	public IActionResult Login()
+	{
+		return View();
+	}
+
+	[HttpPost("login")]
+	public async Task<IActionResult> Login(UserLoginViewModel user, CancellationToken cancellationToken)
+	{
+		return View();
+	}
+
+	/// <summary>
 	/// Registers a user.
 	/// </summary>
 	/// <param name="user">User data.</param>
