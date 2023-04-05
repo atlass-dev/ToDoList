@@ -45,7 +45,7 @@ public class AccountController : Controller
 	{
 		var userId = await mediator.Send(new AuthenticateUserCommand(model.Email, model.Password), cancellationToken);
 
-		return Redirect($"users/{userId}");
+		return RedirectToAction("Details", "Users", new { userId = userId });
 	}
 
 	/// <summary>
