@@ -1,5 +1,5 @@
 ﻿using MediatR;
-using ToDoList.UseCases.Users.Common.Dtos;
+using ToDoList.UseCases.Common.Dtos;
 
 namespace ToDoList.UseCases.Users.GetUserById;
 

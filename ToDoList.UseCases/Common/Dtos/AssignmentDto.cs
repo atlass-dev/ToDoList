@@ -1,4 +1,4 @@
-﻿namespace ToDoList.UseCases.Users.Common.Dtos;
+﻿namespace ToDoList.UseCases.Common.Dtos;
 
 /// <summary>
 /// Assignment entity.
@@ -34,9 +34,4 @@ public record AssignmentDto
     /// Id of user.
     /// </summary>
 	required public int UserId { get; set; }
-
-    /// <summary>
-    /// User who created this assignment.
-    /// </summary>
-    required public UserDto User { get; init; }
 }

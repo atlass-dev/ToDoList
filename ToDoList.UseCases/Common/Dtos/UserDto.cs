@@ -1,4 +1,4 @@
-﻿namespace ToDoList.UseCases.Users.Common.Dtos;
+﻿namespace ToDoList.UseCases.Common.Dtos;
 
 /// <summary>
 /// User entity.

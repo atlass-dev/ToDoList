@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ToDoList.Infrastructure.Abstractions\ToDoList.Infrastructure.Abstractions.csproj" />
+    <ProjectReference Include="..\ToDoList.Infrastructure\ToDoList.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,4 @@
-﻿using ToDoList.UseCases.Utils;
+﻿using ToDoList.UseCases.Users;
 
 namespace ToDoList.Web.Infrastructure.DependencyInjection;
 

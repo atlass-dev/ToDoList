@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using ToDoList.UseCases.Users.Common.Dtos;
+using ToDoList.UseCases.Common.Dtos;
 using ToDoList.Web.Models.Assignment;
 using ToDoList.Web.Models.User;
 
