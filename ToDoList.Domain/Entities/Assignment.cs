@@ -44,5 +44,5 @@ public class Assignment
 	/// <summary>
 	/// User who created this assignment.
 	/// </summary>
-	required public User User { get; set; }
+	public User? User { get; set; }
 }
