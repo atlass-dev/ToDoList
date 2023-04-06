@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using ToDoList.Domain.Entities;
-using ToDoList.UseCases.Users.CreateUser;
 using ToDoList.UseCases.Users.GetUserById;
 using ToDoList.Web.Models.User;
 
@@ -18,16 +17,14 @@ public class UsersController : Controller
 {
 	private readonly IMediator mediator;
 	private readonly IMapper mapper;
-	private readonly SignInManager<User> signInManager;
 
 	/// <summary>
 	/// Constructor.
 	/// </summary>
-	public UsersController(IMediator mediator, IMapper mapper, SignInManager<User> signInManager)
+	public UsersController(IMediator mediator, IMapper mapper)
 	{
 		this.mediator = mediator;
 		this.mapper = mapper;
-		this.signInManager = signInManager;
 	}
 
 	/// <summary>
