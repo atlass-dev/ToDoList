@@ -1,4 +1,5 @@
-﻿using ToDoList.Web.Models.User;
+﻿using System.ComponentModel.DataAnnotations;
+using ToDoList.Web.Models.User;
 
 namespace ToDoList.Web.Models.Assignment;
 
@@ -15,16 +16,20 @@ public record AssignmentViewModel
 	/// <summary>
 	/// Assignment's title.
 	/// </summary>
+	[Required]
+	[MaxLength(50)]
 	required public string Title { get; init; }
 
 	/// <summary>
 	/// Assignment's description.
 	/// </summary>
+	[MaxLength(500)]
 	public string? Description { get; init; }
 
 	/// <summary>
 	/// The date until assignment must be completed.
 	/// </summary>
+	[Display(Name = "Complete until")]
 	public DateTime? CompleteUntil { get; init; }
 
 	/// <summary>
@@ -36,9 +41,4 @@ public record AssignmentViewModel
 	/// Id of user who created this assignment.
 	/// </summary>
 	public int UserId { get; init; }
-
-	/// <summary>
-	/// User who created this assignment.
-	/// </summary>
-	required public UserViewModel User { get; init; }
 }
