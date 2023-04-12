@@ -4,7 +4,7 @@ using ToDoList.Domain.Entities;
 namespace ToDoList.Infrastructure.Abstractions.Interfaces;
 
 /// <summary>
-/// Application abstraction for unit of work.
+/// Application abstraction for unit of work. Test change
 /// </summary>
 public interface IAppDbContext : IDbContextWithSets
 {
